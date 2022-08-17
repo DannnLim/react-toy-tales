@@ -36,6 +36,13 @@ class App extends React.Component{
       </>
     );
   }
+  
+  componentDidMount(){
+    fetch('http://localhost:3001/toys')
+    .then(res => res.json)
+    .then(json =>
+      this.setState({toys: json}))
+  }
 
 }
 
